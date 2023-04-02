@@ -1,0 +1,112 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Email Form</title>
+
+    <style>
+		.scrollable {
+			overflow-y: scroll;
+			height: 70px;
+            width: 350px;                                                                                                                      
+		}
+	</style>
+
+</head>
+<body>
+
+    <h1>Send an Email with QR Code (Your Number)</h1>
+    <form action="/send_email" method="POST">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+        <button type="submit">Send Email</button>
+    </form>
+
+    <hr>
+    <h2>Generate QR Code to know (Your Number)</h2>
+    <form action="/qrcode" method="GET">
+        <label for="body">Enter your phone number:</label>
+        <input type="text" id="body" name="body" required><br><br>
+        <button type="submit">Generate QR Code</button>
+        <p>After Generate you can << screenshot >> or << send to your email >></p>
+    </form>
+    <hr>
+
+    <form action="/simple_ask" method="GET">
+        <button style="font-size: 20px; padding: 10px 20px;">Get a simple medical treatment</button>
+    </form>
+
+
+    <hr>
+    <div>
+		<button style="font-size: 20px; padding: 10px 20px; margin-bottom: 30px;" onclick="goToDiscord()">Go to Discord server to ask doctors</button>
+	</div>
+
+    <script>
+		function goToDiscord() {
+			window.location.href = "https://discord.gg/HAqX8MNy";
+		}
+	</script>
+
+    <hr>
+    <form action="/run_tkinter" method="GET">
+        <button style="font-size: 20px; padding: 10px 20px;">You Can Ask Some Question to Ai</button>
+    </form>
+
+    
+    
+    <!--type는 속성을 사용하여 텍스트의 입력창을 만듬
+        id는 각각의 입력창을 구별하는 용도로 사용됨
+        style="display:none"을 사용 시작때 이 화면이 안보이게함
+        onkeydown를 사용 사용자가 키가 눌렸을때 showValue를 호출함
+        여기서 event.keyCode==13의 의미는 사용자가 엔터를 입력헀다는 의미-->
+    <!--
+    <form action="/input_handler" method="POST">
+        <div style="margin-top: 10px">                                                                                                          
+          <textarea id="inputValue" class="scrollable" style="display:none;"></textarea>                               
+          <button id="inputbtn" style="display:none;" type="button" onclick="sendInput()">Ask</button>
+          <textatera id="aiinput" class="scrollable"></textarea>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById("aiinput").value = "{{inputValue}}";
+    </script>
+    -->
+    <!--sendInput 함수 부분
+        form이라는 이름의 새 요소를 생성합니다,
+        form요소에 http URL설정 및 메소드 설정,
+        input이라는 새 요소 생성,
+        input에 inputValue라는 속성을 설정 하고 값을 설정함,
+        그리고 input요소를 form 요소에 추가해줌,
+        그리고 html 문서의 body문에 추가해주면 마무리,
+        마지막으로 form요소를 서버에 제출하면 python에서 받을 수 있음.
+        매우 신기......
+    -->
+    <!--
+    <script type="text/javascript">
+        function showInput() {
+            document.getElementById("inputValue").style.display = "block";
+            document.getElementById("inputbtn").style.display = "block";
+           
+        }
+        
+        function sendInput() {
+            var inputValue = document.getElementById("inputValue").value;                
+            var form = document.createElement('form');
+            form.action = '/input_handler';
+            form.method = 'POST';
+
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.name = 'inputValue';
+            input.value = inputValue;
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+    -->
+</body>
+</html>
