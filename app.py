@@ -268,19 +268,6 @@ def simple():
     window.attributes('-topmost',True) 
     window.mainloop()
     return render_template('email.html')
-# @app.route('/input_handler', methods=['POST'])
-# def input_handler():
-#     if request.method == 'POST':
-#         input_value = request.form['inputValue']
-#         return render_template('email.html', input_value=input_value)
-    
-# HTML 코드    
-# alert("Input value is: " + inputValue);
-# <form method="POST" action="/">
-#     <label for="inputValue">Input Value:</label>
-#     <input type="text" id="inputValue" name="inputValue">
-#     <button type="submit">Submit</button>
-# </form> 
 
 if __name__ == '__main__':                                                      # 앱의 Main함수.
     app.run()
