@@ -29,8 +29,8 @@ def index():
  
 @app.route('/send_email', methods=['POST'])
 def send_email():
-    email_address = 'ekatmdrkd1610@gmail.com'                                   # 이메일을 보낼 사람의 이메일.
-    email_password = 'fuatfymfjxcipwdg'                                         # 이메일을 보낼 사람의 비밀번호.
+    email_address = 'Your email'                                                # 이메일을 보낼 사람의 이메일.
+    email_password = 'Your email password'                                       # 이메일을 보낼 사람의 비밀번호.
                                                                                 # 구글의 보안이 강해서,
                                                                                 # 앱 비밀번호를 따로 받아야함.
                                                                                 # 보안에 들어가면 있음 + 2차 인증 한 계정한에서.           
@@ -125,7 +125,7 @@ def generate_qrcode():
     return send_file(img_io, mimetype='image/png')                              # 사진의 형태 + PNG 형태를 img_io라는 이름에 넣어 Return.
 
 
-openai.api_key = "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"
+openai.api_key = "Your openai_api"
 messages = []
 
 @app.route('/run_tkinter')   
